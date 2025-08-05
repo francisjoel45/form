@@ -110,6 +110,21 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
+        .position-description h6 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .position-description ul {
+            padding-left: 1.25rem;
+            margin-bottom: 0;
+        }
+        
+        .position-description li {
+            margin-bottom: 0.5rem;
+        }
+        
         .success-message {
             display: none;
             text-align: center;
@@ -199,27 +214,91 @@
                         <!-- Position Descriptions -->
                         <div id="communicationDesc" class="position-description">
                             <h6>Communication & Marketing Strategist</h6>
-                            <p class="mb-2">Lead our media campaigns across all platforms.</p>
-                            <ul class="mb-0">
-                                <li>Develop media strategies</li>
-                                <li>Manage social media</li>
-                                <li>Coordinate press</li>
-                                <li>Create content</li>
+                            <p>Lead our print and social media campaigns to effectively communicate our message to voters across all platforms.</p>
+                            <ul>
+                                <li>Develop comprehensive media strategies</li>
+                                <li>Manage social media platforms</li>
+                                <li>Coordinate press releases</li>
+                                <li>Create engaging content</li>
                             </ul>
                         </div>
                         
                         <div id="managerDesc" class="position-description">
                             <h6>Campaign Manager</h6>
-                            <p class="mb-2">Ensure smooth campaign operations.</p>
-                            <ul class="mb-0">
-                                <li>Office management</li>
-                                <li>Strategic planning</li>
-                                <li>Logistics coordination</li>
-                                <li>Reporting</li>
+                            <p>Ensure smooth operations of campaign offices and assist in strategic planning and execution.</p>
+                            <ul>
+                                <li>Manage daily office operations</li>
+                                <li>Assist in campaign planning</li>
+                                <li>Coordinate logistics</li>
+                                <li>Prepare reports and documentation</li>
                             </ul>
                         </div>
                         
-                        <!-- Add other position descriptions similarly -->
+                        <div id="fundDesc" class="position-description">
+                            <h6>Fund Mobilizer</h6>
+                            <p>Lead fundraising efforts from local and diaspora supporters through innovative platforms.</p>
+                            <ul>
+                                <li>Develop fundraising strategies</li>
+                                <li>Engage diaspora community</li>
+                                <li>Manage online fundraising</li>
+                                <li>Track and report donations</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="youthDesc" class="position-description">
+                            <h6>Youth Mobilizer</h6>
+                            <p>Engage and mobilize the youth across Seme to participate in the campaign and voting process.</p>
+                            <ul>
+                                <li>Organize youth events</li>
+                                <li>Coordinate campus outreach</li>
+                                <li>Develop youth-friendly content</li>
+                                <li>Mobilize voter registration</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="womenDesc" class="position-description">
+                            <h6>Women's Champion</h6>
+                            <p>Advocate for women's issues and mobilize female voters across the region.</p>
+                            <ul>
+                                <li>Organize women's forums</li>
+                                <li>Address gender-specific concerns</li>
+                                <li>Mobilize women voters</li>
+                                <li>Promote women's empowerment</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="communityDesc" class="position-description">
+                            <h6>Community Champion</h6>
+                            <p>Engage with elders and community leaders to build support for our campaign.</p>
+                            <ul>
+                                <li>Organize community meetings</li>
+                                <li>Address community concerns</li>
+                                <li>Mobilize senior voters</li>
+                                <li>Promote dialogue</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="securityDesc" class="position-description">
+                            <h6>Security Manager</h6>
+                            <p>Ensure the safety and security of campaign events, personnel, and materials.</p>
+                            <ul>
+                                <li>Develop security plans</li>
+                                <li>Coordinate with local authorities</li>
+                                <li>Manage event security</li>
+                                <li>Implement safety protocols</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="volunteerDesc" class="position-description">
+                            <h6>General Volunteer</h6>
+                            <p>Join our team of dedicated volunteers to support various campaign activities.</p>
+                            <ul>
+                                <li>Canvassing and door-to-door</li>
+                                <li>Event support</li>
+                                <li>Voter registration</li>
+                                <li>Community outreach</li>
+                            </ul>
+                        </div>
                     </div>
                     
                     <div class="row">
@@ -227,10 +306,10 @@
                             <label for="fullName">Full Name</label>
                             <input type="text" class="form-control" id="fullName" name="Full Name" required>
                         </div>
-                        <div class="col-md-6 floating-label">
-                            <label for="email">Email Address</label>
-                            <input type="email" class="form-control" id="email" name="Email" required>
-                        </div>
+                       <div class="mb-4">
+                          <label class="form-label">Resume/CV</label>
+                          <input type="text" class="form-control" name="ResumeLink" placeholder="Paste a link to your resume (e.g. Google Drive)">
+                  </div>
                     </div>
                     
                     <div class="row">
@@ -249,10 +328,10 @@
                         <textarea class="form-control" id="experience" rows="3" name="Experience"></textarea>
                     </div>
                     
-               <div class="mb-4">
-                     <label class="form-label">Resume/CV</label>
-                     <input type="text" class="form-control" name="ResumeLink" placeholder="Paste a link to your resume (e.g. Google Drive)">
-              </div>
+                    <div class="mb-4">
+                        <label class="form-label">Upload Resume/CV</label>
+                        <input type="file" class="form-control" name="Resume">
+                    </div>
                     
                     <div id="formButtons">
                         <button type="submit" class="btn btn-apply">
@@ -305,8 +384,19 @@
                 document.getElementById('communicationDesc').style.display = 'block';
             } else if (position === 'Campaign Manager') {
                 document.getElementById('managerDesc').style.display = 'block';
+            } else if (position === 'Fund Mobilizer') {
+                document.getElementById('fundDesc').style.display = 'block';
+            } else if (position === 'Youth Mobilizer') {
+                document.getElementById('youthDesc').style.display = 'block';
+            } else if (position === "Women's Champion") {
+                document.getElementById('womenDesc').style.display = 'block';
+            } else if (position === 'Community Champion') {
+                document.getElementById('communityDesc').style.display = 'block';
+            } else if (position === 'Security Manager') {
+                document.getElementById('securityDesc').style.display = 'block';
+            } else if (position === 'Volunteer') {
+                document.getElementById('volunteerDesc').style.display = 'block';
             }
-            // Add other position conditions
         }
         
         // Form submission
@@ -361,4 +451,3 @@
     </script>
 </body>
 </html>
-
