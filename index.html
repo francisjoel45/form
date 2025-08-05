@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Ochimapesa 2027 Campaign</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5276;
+            --primary-light: #2c7cb0;
+            --secondary: #d4ac0d;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark);
+        }
+        
+        .campaign-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .application-card {
+            max-width: 800px;
+            margin: 0 auto;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .application-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .application-body {
+            padding: 2.5rem;
+            background: white;
+        }
+        
+        .form-select {
+            padding: 1rem;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(26, 82, 118, 0.25);
+        }
+        
+        .form-control {
+            padding: 1rem;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(26, 82, 118, 0.25);
+        }
+        
+        .btn-apply {
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-weight: 600;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-apply:hover {
+            background-color: #b7950b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .position-description {
+            background-color: rgba(26, 82, 118, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+        
+        .floating-label {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .floating-label label {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: white;
+            padding: 0 5px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .success-icon {
+            color: var(--secondary);
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="campaign-header">
+        <div class="container">
+            <h1><i class="fas fa-vote-yea me-2"></i>Join Our Campaign Team</h1>
+            <p class="lead">Ochimapesa 2027 - Building a Better Future Together</p>
+        </div>
+    </div>
+    
+    <!-- Application Form -->
+    <div class="container">
+        <div class="application-card">
+            <div class="application-header">
+                <h3>Application Form</h3>
+                <p>Help us make a difference in our community</p>
+            </div>
+            
+            <div class="application-body">
+                <div id="applicationForm">
+                    <div class="mb-4">
+                        <h4 class="text-center mb-4">Select Your Preferred Position</h4>
+                        
+                        <select class="form-select" id="positionSelect" onchange="showPositionDetails()">
+                            <option value="" selected disabled>-- Select a position --</option>
+                            <option value="communication">Communication & Marketing Strategist</option>
+                            <option value="managers">Campaign Managers</option>
+                            <option value="fund">Fund Mobilizers</option>
+                            <option value="youth">Youth Mobilizers</option>
+                            <option value="women">Women's Champions</option>
+                            <option value="community">Community Champions</option>
+                            <option value="security">Security Managers</option>
+                            <option value="volunteer">General Volunteer</option>
+                        </select>
+                        
+                        <!-- Position Descriptions -->
+                        <div id="communicationDesc" class="position-description">
+                            <h5>Communication & Marketing Strategist</h5>
+                            <p>Lead our print and social media campaigns to effectively communicate our message to voters across all platforms.</p>
+                            <ul>
+                                <li>Develop comprehensive media strategies</li>
+                                <li>Manage social media platforms</li>
+                                <li>Coordinate press releases</li>
+                                <li>Create engaging content</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="managersDesc" class="position-description">
+                            <h5>Campaign Managers</h5>
+                            <p>Ensure smooth operations of campaign offices and assist in strategic planning and execution.</p>
+                            <ul>
+                                <li>Manage daily office operations</li>
+                                <li>Assist in campaign planning</li>
+                                <li>Coordinate logistics</li>
+                                <li>Prepare reports and documentation</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="fundDesc" class="position-description">
+                            <h5>Fund Mobilizers</h5>
+                            <p>Lead fundraising efforts from local and diaspora supporters through innovative platforms.</p>
+                            <ul>
+                                <li>Develop fundraising strategies</li>
+                                <li>Engage diaspora community</li>
+                                <li>Manage online fundraising</li>
+                                <li>Track and report donations</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Add other position descriptions similarly -->
+                    </div>
+                    
+                    <div class="floating-label">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="">
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 floating-label">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="">
+                        </div>
+                        <div class="col-md-6 floating-label">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="">
+                        </div>
+                    </div>
+                    
+                    <div class="floating-label">
+                        <label for="location">Location/Constituency</label>
+                        <input type="text" class="form-control" id="location" placeholder="">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Upload Your Resume/CV</label>
+                        <input type="file" class="form-control">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Why are you interested in this position?</label>
+                        <textarea class="form-control" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button class="btn btn-apply" onclick="submitApplication()">Submit Application</button>
+                    </div>
+                </div>
+                
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Thank You!</h3>
+                    <p>Your application has been successfully submitted.</p>
+                    <p>We will review your information and contact you soon.</p>
+                    <button class="btn btn-outline-primary mt-3" onclick="resetForm()">Apply for Another Position</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showPositionDetails() {
+            // Hide all descriptions first
+            document.querySelectorAll('.position-description').forEach(desc => {
+                desc.style.display = 'none';
+            });
+            
+            // Show selected description
+            const selected = document.getElementById('positionSelect').value;
+            if (selected) {
+                document.getElementById(selected + 'Desc').style.display = 'block';
+            }
+        }
+        
+        function submitApplication() {
+            // Validate form
+            const position = document.getElementById('positionSelect').value;
+            const name = document.getElementById('fullName').value;
+            
+            if (!position || !name) {
+                alert('Please select a position and enter your name');
+                return;
+            }
+            
+            // Show success message
+            document.getElementById('applicationForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Scroll to top of form
+            document.querySelector('.application-body').scrollTo(0, 0);
+        }
+        
+        function resetForm() {
+            // Reset form
+            document.getElementById('positionSelect').value = '';
+            document.getElementById('fullName').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('location').value = '';
+            document.querySelector('textarea').value = '';
+            
+            // Hide all descriptions
+            document.querySelectorAll('.position-description').forEach(desc => {
+                desc.style.display = 'none';
+            });
+            
+            // Show form again
+            document.getElementById('applicationForm').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
